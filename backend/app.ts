@@ -1,10 +1,7 @@
 import express, { Request, Response } from "express";
-import dotenv from "dotenv";
+
 import cors from "cors";
 import bodyParser from "body-parser";
-
-// Initialize environment variables from .env file
-dotenv.config();
 
 // Initialize express app
 const app = express();

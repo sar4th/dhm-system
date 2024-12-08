@@ -1,14 +1,13 @@
-
 import app from "./app"; // Import the app configuration
-import dotenv from "dotenv";
 
-// Load environment variables from .env
-dotenv.config();
+import { connectDB } from "./src/config/db";
 
 // Get the port from environment variables, fallback to 5000 if not set
 const port = process.env.PORT || 5000;
+console.log(process.env.DB_PASSWORD, "sssss");
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+connectDB().then(() => {
+  app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+  });
 });
